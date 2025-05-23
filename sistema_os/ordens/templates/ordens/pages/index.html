@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../../../static/global/css/style.css">
+{% load static %} 
+
+{% include "global/partials/head.html" %}
+    <link rel="stylesheet" href="{% static "ordens/css/style.css" %}">
 </head>
 <body>
-    <header>
-        <a href="#"><img src="" alt="">logo</a>
-    </header>
-    <h1>Você deseja:</h1>
-    <a href="#">Cadastrar uma nova OS</a>
-    <a href="#">Editar uma OS existente</a>
+
+    {% include "global/partials/header.html" %}
+
+    <main>
+        <h1>Você deseja:</h1>
+        <div class="options">
+            <a href="#" class='option-button'>Cadastrar uma nova OS</a>
+            <button id='edit-os' class='option-button'>Editar uma OS existente</button>
+            <form action="" id="form-os-number">
+                <input type="text" inputmode="numeric" pattern="[0-9]*" name="os-number" id="os-number" placeholder="Digite o número da OS" >
+                <button type="submit"><i class="fa-solid fa-check"></i></button>
+            </form>
+        </div>
+    </main>
+
+
+    {% include "global/partials/footer.html" %}
+          
+    <script src="{% static "ordens/js/toggle_visibility.js" %}"></script>
 </body>
 </html>

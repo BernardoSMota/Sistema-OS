@@ -1,0 +1,113 @@
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+
+main h1{
+    font-size: 3.2rem;
+}
+
+.options{
+    margin-top: 5rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.options > button{
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.option-button{
+    font-size: 2rem;
+
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+
+    padding: 4rem 2rem;
+    
+    background-color: rgb(var(--header-bg));
+    border: 0.5rem solid rgb(var(--main-bg));
+    border-radius: 1.5rem;
+    outline: 0.5rem solid rgb(var(--header-bg));
+
+    transition: all 0.5s ease;
+}
+
+.option-button:hover, .option-button:active{
+    background-color: rgb(var(--header-bg), 0.6);
+    outline-color: rgb(var(--header-bg), 0.6);
+    color: rgb(0, 0, 0, 0.6);
+}
+
+.option-button:active{
+    transform: scale(0.98);
+}
+
+#form-os-number{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+#form-os-number input, #form-os-number button{
+    outline: none;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transition: all 0.5s ease-out;
+}
+
+#form-os-number input{
+    border-left: 2px solid transparent;
+    border-right: none;
+
+    flex-grow: 2;   
+
+    font-size: 1.6rem;
+    padding: 1rem 1rem 1rem 1.5rem;
+    border-radius: 1.5rem 0 0 1.5rem;
+}
+
+#form-os-number button{
+    background-color: white;
+    color: black;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+
+    font-size: 1.6rem;
+    padding: 1rem;
+    border-radius: 0 1.5rem 1.5rem 0;
+
+    flex-grow: 1;
+    display: grid;
+    align-items: center;
+}
+
+#form-os-number input[type="text"]::-webkit-outer-spin-button,
+#form-os-number input[type="text"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#form-os-number input:hover + button, #form-os-number input:focus + button {
+    border-top: 2px solid rgb(var(--header-bg));
+    border-right: 2px solid rgb(var(--header-bg));
+    border-bottom: 2px solid rgb(var(--header-bg));
+    border-left: 2px solid rgb(var(--header-bg));
+    
+    color: rgb(var(--header-bg));
+}
+
+#form-os-number input:hover, #form-os-number input:focus{
+    border-top: 2px solid rgb(var(--header-bg));
+    border-right: none;
+    border-bottom: 2px solid rgb(var(--header-bg));
+    border-left: 2px solid rgb(var(--header-bg));   
+}
