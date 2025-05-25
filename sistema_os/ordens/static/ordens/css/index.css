@@ -2,11 +2,6 @@ main{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 2rem;
-}
-
-main h1{
-    font-size: 3.2rem;
 }
 
 .options{
@@ -58,7 +53,6 @@ main h1{
 }
 
 #form-os-number input, #form-os-number button{
-    outline: none;
     border-top: 2px solid transparent;
     border-bottom: 2px solid transparent;
     transition: all 0.5s ease-out;
@@ -70,8 +64,6 @@ main h1{
 
     flex-grow: 2;   
 
-    font-size: 1.6rem;
-    padding: 1rem 1rem 1rem 1.5rem;
     border-radius: 1.5rem 0 0 1.5rem;
 }
 
@@ -81,8 +73,6 @@ main h1{
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
 
-    font-size: 1.6rem;
-    padding: 1rem;
     border-radius: 0 1.5rem 1.5rem 0;
 
     flex-grow: 1;
@@ -111,3 +101,5 @@ main h1{
     border-bottom: 2px solid rgb(var(--header-bg));
     border-left: 2px solid rgb(var(--header-bg));   
 }
+
+

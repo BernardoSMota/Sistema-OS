@@ -1,0 +1,113 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+main {
+    padding: 1rem;
+    max-width: 100%;
+    text-align: center;
+}
+
+form {
+    font-size: 1.6rem;
+
+    display: grid;
+    grid-template-areas: 
+        'os os'
+        'client client'
+        'equipment equipment'
+        'brand brand'
+        'pot rotation'
+        'picInput picInput'
+        'images images'
+        'confirm confirm';
+    column-gap: 1rem;
+    row-gap: 2rem;
+
+    margin-top: 3rem;
+}
+
+form span {
+    display: flex;
+    flex-direction: column;
+}
+
+.os-number { grid-area: os; }
+.client { grid-area: client; }
+.equipment { grid-area: equipment; }
+.brand { grid-area: brand; }
+.pot { grid-area: pot; }
+.rotation { grid-area: rotation; }
+.pictures { grid-area: picInput; }
+
+#confirm { grid-area: confirm; }
+
+form input {
+    padding: 1rem;
+    width: 100%;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.pictures label {
+    background-color: rgb(var(--header-bg));
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+#pictures-container {
+    grid-area: images;
+    display: none;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    user-select: none;
+}
+
+#pictures-container img {
+    flex-shrink: 0;
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+#pictures-container::-webkit-scrollbar {
+  height: 1vh;
+}
+
+#pictures-container::-webkit-scrollbar-thumb{
+    background-color: rgb(var(--header-bg));
+    cursor: pointer;
+}
+
+#pictures-container::-webkit-scrollbar-track{
+    background-color: transparent;
+    cursor: pointer;
+}
+
+button{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.os-number::before{
+    content: 'Número de OS já cadastrado';
+    background-color: none;
+    color: rgb(255, 146, 146);
+    margin: 0 1rem 0.5rem 0;
+    text-align: end;
+    font-size: 1.3rem;
+}
