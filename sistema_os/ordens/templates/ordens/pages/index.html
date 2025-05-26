@@ -12,7 +12,7 @@
         <div class="options">
             <a href="{% url "ordens:create" %}" class='option-button'>Cadastrar uma nova OS</a>
             <button id='edit-os' class='option-button'>Editar uma OS existente</button>
-            <form action="" id="form-os-number">
+            <form action="{% url "ordens:edit" %}" id="form-os-number">
                 <input type="text" inputmode="numeric" pattern="[0-9]*" name="os-number" id="os-number" placeholder="Digite o número da OS" >
                 <button type="submit"><i class="fa-solid fa-check"></i></button>
             </form>

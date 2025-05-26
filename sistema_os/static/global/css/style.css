@@ -53,8 +53,6 @@ input, button{
     border: none;
 }
 
-/* button{
-    font-size: 1.6rem;
-    padding: 1rem;
-    border-radius: 1.5rem;
-} */
+button{
+    cursor: pointer;
+}

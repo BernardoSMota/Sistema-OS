@@ -1,0 +1,57 @@
+body{
+    font-size: 1.6rem;
+}
+
+main{
+    padding: 1rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    margin-top: 3rem;
+    /* background-color: tomato; */
+}
+
+span, button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type='checkbox']{
+    display: none;
+}
+
+label{
+    background-color: rgb(var(--header-bg));
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+
+    border-radius: 1.5rem;
+    border: 0.5rem solid rgb(var(--main-bg));
+    outline: 0.5rem solid rgb(var(--header-bg));
+
+    transition: all 0.5s ease;
+    position: relative;
+
+    text-transform: capitalize;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+label:hover{
+    transform: scale(1.01);
+}
+
+input[type='checkbox']:checked + label{
+    /* background-color: rgba(24, 117, 24, 0.678); */
+    transform: scale(0.95);
+    border: 0.5rem solid rgb(24, 117, 24);
+}
