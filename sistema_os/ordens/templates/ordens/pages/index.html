@@ -4,7 +4,8 @@
     <link rel="stylesheet" href="{% static "ordens/css/index.css" %}">
 </head>
 <body>
-
+    {% include "global/partials/messages.html" %}
+    
     {% include "global/partials/header.html" %}
 
     <main>
@@ -12,8 +13,9 @@
         <div class="options">
             <a href="{% url "ordens:create" %}" class='option-button'>Cadastrar uma nova OS</a>
             <button id='edit-os' class='option-button'>Editar uma OS existente</button>
-            <form action="{% url "ordens:edit" %}" id="form-os-number">
-                <input type="text" inputmode="numeric" pattern="[0-9]*" name="os-number" id="os-number" placeholder="Digite o número da OS" >
+            <form action="" method='post' id="form-os-number">
+                {% csrf_token %}
+                <input type="text" inputmode="numeric" pattern="[0-9]*" name="os-number" id="os-number" placeholder="Digite o número da OS" value='{{ os_number }}'>
                 <button type="submit"><i class="fa-solid fa-check"></i></button>
             </form>
         </div>

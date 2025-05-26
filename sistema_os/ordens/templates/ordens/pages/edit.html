@@ -3,10 +3,13 @@
     <link rel="stylesheet" href="{% static "ordens/css/edit.css" %}">
 </head>
 <body>
+    {% include "global/partials/messages.html" %}
+    
     {% include "global/partials/header.html" %}
 
     <main>
-        <h2>Marque as opções que deseja editar</h2>
+        <h2>Editando a OS {{ os_number }}</h2>
+        <p>Selecione as alterações que deseja fazer</p>
 
         <form action="">
 

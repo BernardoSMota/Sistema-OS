@@ -22,22 +22,21 @@ main{
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    color: black;
+    color: var(--main-bg);
 
     padding: 4rem 2rem;
     
-    background-color: rgb(var(--header-bg));
-    border: 0.5rem solid rgb(var(--main-bg));
+    background-color: var(--header-bg);
+    border: 0.5rem solid var(--main-bg);
     border-radius: 1.5rem;
-    outline: 0.5rem solid rgb(var(--header-bg));
+    outline: 0.5rem solid var(--header-bg);
 
     transition: all 0.5s ease;
 }
 
 .option-button:hover, .option-button:active{
-    background-color: rgb(var(--header-bg), 0.6);
-    outline-color: rgb(var(--header-bg), 0.6);
-    color: rgb(0, 0, 0, 0.6);
+    background-color: var(--header-bg-dk);
+    outline-color: var(--header-bg-dk);
 }
 
 .option-button:active{
@@ -68,8 +67,8 @@ main{
 }
 
 #form-os-number button{
-    background-color: white;
-    color: black;
+    background-color: var(--secondary-button);
+    color: var(--main-bg);
     border-left: 2px solid transparent;
     border-right: 2px solid transparent;
 
@@ -87,19 +86,17 @@ main{
 }
 
 #form-os-number input:hover + button, #form-os-number input:focus + button {
-    border-top: 2px solid rgb(var(--header-bg));
-    border-right: 2px solid rgb(var(--header-bg));
-    border-bottom: 2px solid rgb(var(--header-bg));
-    border-left: 2px solid rgb(var(--header-bg));
-    
-    color: rgb(var(--header-bg));
+    border-top: 2px solid var(--secondary-button);
+    border-right: 2px solid var(--secondary-button);
+    border-bottom: 2px solid var(--secondary-button);
+    border-left: 2px solid var(--secondary-button);
 }
 
 #form-os-number input:hover, #form-os-number input:focus{
-    border-top: 2px solid rgb(var(--header-bg));
+    border-top: 2px solid var(--secondary-button);
     border-right: none;
-    border-bottom: 2px solid rgb(var(--header-bg));
-    border-left: 2px solid rgb(var(--header-bg));   
+    border-bottom: 2px solid var(--secondary-button);
+    border-left: 2px solid var(--secondary-button);
 }
 
 

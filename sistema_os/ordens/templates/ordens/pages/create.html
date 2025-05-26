@@ -3,43 +3,47 @@
 <link rel="stylesheet" href="{% static "ordens/css/create.css" %}">
 </head>
 <body>
+    {% include "global/partials/messages.html" %}
+    
     {% include "global/partials/header.html" %}
 
     <main>
         <h2>Dados do equipamento</h2>
 
-        <form action="{% url "ordens:home" %}" id='main-form'>
-            <span class='os-number'>
-                <input type="text" inputmode="numeric" pattern="[0-9]*" name="os-number" id="os-number" placeholder="Digite o número da OS" >
+        <form action="" id='main-form' method='post'>
+            {% csrf_token %}
+            <span class='input-span os-number'>
+                <span class='os-error' id='os-error'>Número de OS já cadastrado</span>
+                <input type="text" inputmode="numeric" pattern="[0-9]*" name="os-number" id="os-number" placeholder="Digite o número da OS" onblur='verificarNumeroOS()' required>
             </span>
             
-            <span class='client'>
+            <span class='input-span client'>
                 <input type="text" name="client" id="client" placeholder='Cliente'>
             </span>
 
-            <span class='equipment'>
+            <span class='input-span equipment'>
                 <input type="text" name="equipment" id="equiament" placeholder='Equipamento'>
             </span>
 
-            <span class='brand'>
+            <span class='input-span brand'>
                 <input type="text" name="brand" id="brand" placeholder='Marca'>
             </span>
 
-            <span class='pot'>
+            <span class='input-span pot'>
                 <input type="text" inputmode="decimal" pattern="[0-9]*" name="pot" id="pot" placeholder='Potência (CV)'>
             </span>
 
-            <span class='rotation'>
+            <span class='input-span rotation'>
                 <input type="text" inputmode="numerci" pattern="[0-9]*" name="rotation" id="rotation" placeholder='RPM'>
             </span>
 
-            <span class='pictures'>
+            <span class='input-span pictures'>
                 <label for="pictures" id='label-pictures'>Adicionar imagens</label>
                 <input type="file" name="pictures" id="pictures" accept="image/*" multiple placeholder='Fotos do equipamento'>
             </span>
             <div id="pictures-container" class="status"></div>
 
-            <button type="submit" id='confirm'>Confirmar</button>
+            <button type="submit" id='confirm' disabled>Confirmar</button>
         </form>
 
         
@@ -47,6 +51,7 @@
 
     {% comment %} <script src="{% static "global/js/auto_update.js" %}"></script> {% endcomment %}
     <script src="{% static "ordens/js/update_pictures.js" %}"></script>
+    <script src="{% static "ordens/js/check_os.js" %}"></script>
     
 </body>
 </html>

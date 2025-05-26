@@ -1,7 +1,38 @@
 :root{
-    --header-bg: 255, 99, 71;
-    --main-bg: 122, 116, 165;
-    --teste: blue;
+    --header-bg-lst: #CC0000;
+    --header-bg-lt: #B30000;
+    --header-bg: #8B0000;
+    --header-bg-dk: #660000;
+    --header-bg-dkt: #4D0000;
+
+    --main-bg-lst: #FFFFFF;
+    --main-bg-lt:#FAFAFA;
+    --main-bg: #F5F5F5;
+    --main-bg-dk: #C0C0C0;
+    --main-bg-dkt: #DCDCDC;
+
+    --primary-button: #8B0000;
+    --primary-button-hover: #A00000;
+    --secondary-button: #555555;
+    --secondary-button-hover: #777777;
+    --main-text: #333;
+    --highlight-text: #8B0000;
+
+    --success-lst: #CAF8CE;
+    --success-lt: #93d198;
+    --success: #2E7D32;
+
+    --error-lst: #FFCDD2 ;
+    --error-lt: #E57373 ;
+    --error: #C62828;
+
+    --warning-lst: #FFE0B2;
+    --warning-lt: #FFB74D;
+    --warning: #ED6C02;
+
+    --info-lst: #B3E5FC;
+    --info-lt: #4FC3F7;
+    --info: #0288D1;
 }
 
 *{
@@ -17,7 +48,7 @@ html{
     height: 100%;
     text-decoration: none;
     font-family: "Almarai", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: black;
+    color: var(--main-text);
 }
 
 body{
@@ -33,12 +64,12 @@ h2{ font-size: 2.4rem;}
 
 
 header{
-    background-color: rgb(var(--header-bg));
+    background-color: var(--header-bg);
     padding: 1rem 0.5rem;
 }
 
 main{
-    background-color: rgb(var(--main-bg));
+    background-color: var(--main-bg);
     flex-grow: 1;
     overflow: auto;
     padding-top: 2rem;
@@ -55,4 +86,60 @@ input, button{
 
 button{
     cursor: pointer;
+}
+
+button:disabled{
+    cursor: not-allowed;
+    background-color: var(--main-bg-dk);
+}
+
+
+/* alert alert-classe */
+
+
+.alert-container{
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+
+    font-size: 1.2rem;
+}
+
+.alert{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    margin: 0.5rem 0;
+    border: 0.2rem solid transparent;
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert-success{
+    background-color: var(--success-lst);
+    border-color: var(--success-lt);
+    color: var(--success);   
+}
+
+.alert-error{
+    background-color: var(--error-lst);
+    border-color: var(--error-lt);
+    color: var(--error);
+}
+
+.alert-info{
+    background-color: var(--info-lst);
+    border-color: var(--info-lt);
+    color: var(--info);
+}
+
+.alert-warning{
+    background-color: var(--warning-lst);
+    border-color: var(--warning-lt);
+    color: var(--warning);
 }

@@ -13,7 +13,6 @@ form{
     align-items: center;
 
     margin-top: 3rem;
-    /* background-color: tomato; */
 }
 
 span, button{
@@ -28,14 +27,14 @@ input[type='checkbox']{
 }
 
 label{
-    background-color: rgb(var(--header-bg));
+    background-color: var(--header-bg);
     text-align: center;
     width: 100%;
     padding: 1rem;
 
     border-radius: 1.5rem;
-    border: 0.5rem solid rgb(var(--main-bg));
-    outline: 0.5rem solid rgb(var(--header-bg));
+    border: 0.5rem solid var(--main-bg);
+    outline: 0.5rem solid var(--header-bg);
 
     transition: all 0.5s ease;
     position: relative;
@@ -51,7 +50,6 @@ label:hover{
 }
 
 input[type='checkbox']:checked + label{
-    /* background-color: rgba(24, 117, 24, 0.678); */
     transform: scale(0.95);
-    border: 0.5rem solid rgb(24, 117, 24);
+    border: 0.5rem solid var(--success);
 }
