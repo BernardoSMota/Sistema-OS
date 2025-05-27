@@ -10,7 +10,7 @@
     <main>
         <h2>Dados do equipamento</h2>
 
-        <form action="" id='main-form' method='post'>
+        <form action="" id='main-form' method='post' enctype="multipart/form-data">
             {% csrf_token %}
             <span class='input-span os-number'>
                 <span class='os-error' id='os-error'>Número de OS já cadastrado</span>

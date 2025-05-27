@@ -23,7 +23,7 @@ def home(request):
 def create(request):
     if request.method == 'POST':
         number = request.POST.get('os-number')
-        created = create_folder(request.POST)
+        created = create_folder(request.POST, request.FILES)
         if created:
             messages.success(request, f'OS {number} criada com sucesso!')
             return redirect('ordens:home')

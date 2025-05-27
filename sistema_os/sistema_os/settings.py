@@ -127,4 +127,4 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CAMINHO_BASE_SALVAMENTO = config('CAMINHO_BASE')
+CAMINHO_BASE_SALVAMENTO = Path(config('CAMINHO_BASE'))
