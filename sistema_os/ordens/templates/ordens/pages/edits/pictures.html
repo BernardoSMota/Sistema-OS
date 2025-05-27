@@ -1,0 +1,33 @@
+{% load static %}
+{% include "global/partials/head.html" %}
+</head>
+<body>
+    {% include "global/partials/messages.html" %}
+    {% include "global/partials/header.html" %}
+    <link rel="stylesheet" href="{% static "ordens/css/input_file.css" %}">
+    <link rel="stylesheet" href="{% static "ordens/css/edits/pictures.css" %}">
+    <main>
+    <h2>Adicionando novas fotos</h2>
+        <form action="" method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            <span class='input-span pictures'>
+                <label for="pictures" id='label-pictures'>Adicionar imagens</label>
+                <input type="file" name="pictures" id="pictures" accept="image/*" multiple placeholder='Fotos do equipamento'>
+            </span>
+            <div id="pictures-container" class="status"></div>
+
+            <div class="action-buttons">
+                {% if go_back %}
+                    <button class='action-button'>Anterior</button>
+                {% endif %}
+                <button class='action-button' type="submit">Confirmar</button>
+                {% if next %}
+                    <button class='action-button'>Próximo</button>
+                {% endif %}
+            </div>
+        </form>
+    </main>
+
+    <script src="{% static "ordens/js/update_pictures.js" %}"></script>
+</body>
+</html>

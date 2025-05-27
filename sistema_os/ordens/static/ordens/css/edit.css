@@ -26,30 +26,33 @@ input[type='checkbox']{
     display: none;
 }
 
-label{
-    background-color: var(--header-bg);
+.label-option{
+    background-color: var(--secondary-button);
     text-align: center;
     width: 100%;
     padding: 1rem;
+    color: var(--main-bg);
 
     border-radius: 1.5rem;
     border: 0.5rem solid var(--main-bg);
-    outline: 0.5rem solid var(--header-bg);
+    outline: 0.5rem solid var(--secondary-button);
 
     transition: all 0.5s ease;
     position: relative;
-
-    text-transform: capitalize;
 
     cursor: pointer;
     user-select: none;
 }
 
-label:hover{
+.label-option:hover{
     transform: scale(1.01);
+    background-color: var(--secondary-button-hover);
+    outline-color: var(--secondary-button-hover);
 }
 
-input[type='checkbox']:checked + label{
+input[type='checkbox']:checked + .label-option{
     transform: scale(0.95);
-    border: 0.5rem solid var(--success);
+    border: 0.5rem solid var(--success-lt);
+    background-color: var(--secondary-button-hover);
+    outline-color: var(--secondary-button-hover);
 }

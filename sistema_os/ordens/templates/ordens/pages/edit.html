@@ -11,32 +11,24 @@
         <h2>Editando a OS {{ os_number }}</h2>
         <p>Selecione as alterações que deseja fazer</p>
 
-        <form action="">
+        <form action="" method='POST'>
+            {% csrf_token %}
 
             <span>
-                <input type="checkbox" name="op01" id="op01">
-                <label for="op01">clicando</label>
+                <input type="checkbox" name="edit_options" id="add_pictures" value="add_pictures">
+                <label class='label-option' for="add_pictures">Adicionar imagens de entrada</label>
             </span>
 
             <span>
-                <input type="checkbox" name="op02" id="op02">
-                <label for="op02">clicando</label>
+                <input type="checkbox" name="edit_options" id="relatorio" value="relatorio">
+                <label class='label-option' for="relatorio">Adicionar relatório de testes</label>
             </span>
 
             <span>
-                <input type="checkbox" name="op03" id="op03">
-                <label for="op03">clicando</label>
+                <input type="checkbox" name="edit_options" id="add_final_pictures" value="add_final_pictures">
+                <label class='label-option' for="add_final_pictures">Adicionar fotos de saída</label>
             </span>
 
-            <span>
-                <input type="checkbox" name="op04" id="op04">
-                <label for="op04">clicando</label>
-            </span>
-
-            <span>
-                <input type="checkbox" name="op05" id="op05">
-                <label for="op05">clicando</label>
-            </span>
 
             <button type="submit">Confirmar</button>
         </form>

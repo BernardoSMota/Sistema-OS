@@ -1,0 +1,72 @@
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+form{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#pictures-container{
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+input[type='file']{
+    display: none;
+}
+
+.pictures{
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.pictures label{
+    font-size: 1.6rem;
+    background-color: var(--secondary-button);
+    color: var(--main-bg);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    display: block;
+    width: 100%;
+}
+
+.pictures label:hover, 
+.pictures label:active{
+    background-color: var(--secondary-button-hover);
+}
+
+#pictures-container {
+    flex-direction: row;
+    gap: 5px;
+    
+    user-select: none;
+}
+
+.action-buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.3rem;
+}
+
+.action-button{
+    width: 100%;
+}
+
+
+/* #pictures-container img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+} */

@@ -1,6 +1,7 @@
 from django.conf import settings
 from datetime import datetime
 import os
+from decouple import config
 
 
 def create_folder(post, files):
@@ -28,12 +29,15 @@ def create_folder(post, files):
         
 def save_imgs(path, os_number, files):
     images = files.getlist('pictures')
-    image_folder_path = os.path.join(path, '02 - Entrada e peritagem')
+    image_folder_name = config('IMAGENS')
+    image_folder_path = os.path.join(path, image_folder_name)
     os.makedirs(image_folder_path, exist_ok=True)
+    
+    num_to_sum = 0 if len(os.listdir(image_folder_path)) == 0 else len(os.listdir(image_folder_path))
     
     for num,img in enumerate(images):
         ext = os.path.splitext(img.name)[1]
-        nome_arquivo = f'OS {os_number} - {(num + 1):03}{ext}'
+        nome_arquivo = f'OS {os_number} - {(num + num_to_sum + 1):03}{ext}'
         full_path = os.path.join(image_folder_path, nome_arquivo)
 
         with open(full_path, 'wb+') as file:
