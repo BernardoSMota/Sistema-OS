@@ -50,48 +50,54 @@ def edit(request, os_number):
         request.session['os_number'] = os_number
         
         return redirect('ordens:edit_step')
-
-    
+ 
     return render(request, 'ordens/pages/edit.html',
                   context={'window_title': 'Criando OS',
                            'os_number': os_number})
     
-
 
 def edit_step(request):
     steps = request.session.get('edit_steps', [])
     index = request.session.get('edit_index', 0)
     os_number = request.session.get('os_number')
     
-    print(steps)
-    
     if index >= len(steps):
         messages.success(request, f'OS {os_number} editada com sucesso')
         return redirect('ordens:home')
     
     current_step = steps[index]
-    print(current_step)
     return redirect(f'ordens:{current_step}', os_number=os_number)
 
 
-
 def edit_step_add_pictures(request, os_number):
-    full_path = os.path.join(settings.CAMINHO_BASE_SALVAMENTO, str(os_number))
-    save_imgs(full_path, os_number, request.FILES)
-    
+    if request.method == 'POST':
+        full_path = os.path.join(settings.CAMINHO_BASE_SALVAMENTO, str(os_number))
+        save_imgs(full_path, os_number, request.FILES)
+        
+        request.session['edit_index'] += 1
+        return redirect('ordens:edit_step')
+
     return render(request, 'ordens/pages/edits/pictures.html')
 
 
 def edit_step_relatorio(request, os_number):
+    if request.method == 'POST':
+        
+        
+        request.session['edit_index'] += 1
+        return redirect('ordens:edit_step')
+    
     return render(request, 'ordens/pages/edits/relatorio.html')
 
 
 def edit_step_add_final_pictures(request, os_number):
+    if request.method == 'POST':
+        
+        
+        request.session['edit_index'] += 1
+        return redirect('ordens:edit_step')
+    
     return render(request, 'ordens/pages/edits/final_pictures.html')
-
-
-
-
 
 
 def verify_os(request):
